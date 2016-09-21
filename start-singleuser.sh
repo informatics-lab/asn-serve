@@ -11,6 +11,9 @@ then
     notebook_arg="--notebook-dir=${NOTEBOOK_DIR}"
 fi
 
+mkdir -p /usr/local/share/notebooks/data/mogreps
+s3fs mogreps /usr/local/share/notebooks/data/mogreps -o iam_role=jade-secrets
+
 exec jupyterhub-singleuser \
   --port=8888 \
   --ip=0.0.0.0 \
