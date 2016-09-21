@@ -17,6 +17,7 @@ RUN chmod 755 /srv/singleuser/singleuser.sh
 
 RUN jupyter notebook --generate-config
 ADD jupyter_notebook_config.py /root/.jupyter/
+ADD ipython_kernel_config.py /root/.ipython/
 
 RUN mkdir -p /usr/local/share/notebooks
 WORKDIR /usr/local/share/notebooks
