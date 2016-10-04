@@ -30,6 +30,12 @@ or remove the line:  
  s3fs mogreps /usr/local/share/notebooks/data/mogreps -o iam_role=jade-secrets
 ```
 
+from `Dockerfile`
+
+Build the container:
+
+`docker build . -t asn-serve`
+
   Then run:  
 
 ```
