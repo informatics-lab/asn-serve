@@ -1,5 +1,14 @@
 FROM quay.io/informaticslab/asn-extensions
 
+# Mount s3 bucket for data
+RUN apt-get update -y && apt-get install -y automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+
+WORKDIR /root
+RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+
+WORKDIR /root/s3fs-fuse
+RUN ./autogen.sh && ./configure && make && make install
+
 # Add Tini
 ENV TINI_VERSION v0.10.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
