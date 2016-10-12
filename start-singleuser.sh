@@ -2,7 +2,7 @@
 set -e
 
 # pull examples notebooks
-if cd /usr/local/share/notebooks/Example\ Notebooks; then git fetch && git reset --hard origin/HEAD && cd ..; else git clone https://github.com/met-office-lab/example-notebooks.git /usr/local/share/notebooks/Example\ Notebooks; fi
+if cd /usr/local/share/notebooks/Example\ Notebooks; then git fetch origin master && git reset --hard origin/HEAD && cd ..; else git clone https://github.com/met-office-lab/example-notebooks.git /usr/local/share/notebooks/Example\ Notebooks; fi
 
 # start single user server
 notebook_arg=""
