@@ -1,4 +1,4 @@
-FROM quay.io/informaticslab/asn-extensions
+FROM quay.io/informaticslab/asn-notebook
 
 # Mount s3 bucket for data
 RUN apt-get update -y && apt-get install -y automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
@@ -21,7 +21,7 @@ RUN pip --no-cache-dir install 'jupyterhub==0.5'
 RUN wget -q https://raw.githubusercontent.com/jupyter/jupyterhub/master/scripts/jupyterhub-singleuser -O /usr/local/bin/jupyterhub-singleuser && \
     chmod 755 /usr/local/bin/jupyterhub-singleuser && \
     mkdir -p /srv/singleuser/
-ADD start-singleuser.sh /srv/singleuser/singleuser.sh 
+ADD start-singleuser.sh /srv/singleuser/singleuser.sh
 RUN chmod 755 /srv/singleuser/singleuser.sh
 
 RUN jupyter notebook --generate-config
