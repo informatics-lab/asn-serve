@@ -1,4 +1,4 @@
-FROM quay.io/informaticslab/asn-notebook
+FROM quay.io/informaticslab/asn-extensions
 
 # Mount s3 bucket for data
 RUN apt-get update -y && apt-get install -y automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
