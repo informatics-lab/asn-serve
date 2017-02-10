@@ -13,6 +13,8 @@ fi
 
 mkdir -p /usr/local/share/notebooks/data/mogreps
 s3fs mogreps /usr/local/share/notebooks/data/mogreps -o iam_role=jade-secrets
+mkdir -p /usr/local/share/notebooks/data/mogreps-g
+s3fs mogreps-g /usr/local/share/notebooks/data/mogreps-g -o iam_role=jade-secrets
 
 
 if [ $DEPLO_ENV = "local" ]; then
